@@ -12,7 +12,7 @@
       var userName = $scope.userName;
       var password = $scope.password;
 
-      $log.log('userName: ' + userName + ', password: ' + password);
+      // $log.log('userName: ' + userName + ', password: ' + password);
 
       if (userName === "xinxin" && password === "xinxin") {
         $state.go('home');
