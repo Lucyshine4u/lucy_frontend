@@ -1,12 +1,21 @@
-export function routerConfig ($stateProvider, $urlRouterProvider) {
-  'ngInject';
-  $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'app/main/main.html',
-      controller: 'MainController',
-      controllerAs: 'main'
-    });
+(function() {
+  'use strict';
 
-  $urlRouterProvider.otherwise('/');
-}
+  angular
+    .module('lucyFrontend')
+    .config(routerConfig);
+
+  /** @ngInject */
+  function routerConfig($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('home', {
+        url: '/',
+        templateUrl: 'app/main/main.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      });
+
+    $urlRouterProvider.otherwise('/');
+  }
+
+})();

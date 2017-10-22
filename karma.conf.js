@@ -18,7 +18,10 @@ function listFiles() {
 
   var patterns = wiredep(wiredepOptions).js
     .concat([
-      path.join(conf.paths.tmp, '/serve/app/index.module.js'),
+      path.join(conf.paths.src, '/app/**/*.module.js'),
+      path.join(conf.paths.src, '/app/**/*.js'),
+      path.join(conf.paths.src, '/**/*.spec.js'),
+      path.join(conf.paths.src, '/**/*.mock.js'),
     ])
     .concat(pathSrcHtml);
 
@@ -47,17 +50,22 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: conf.paths.src + '/',
-      moduleName: 'test'
+      moduleName: 'lucyFrontend'
     },
 
     logLevel: 'WARN',
 
-    frameworks: ['phantomjs-shim', 'jasmine'],
+    frameworks: ['phantomjs-shim', 'jasmine', 'angular-filesort'],
+
+    angularFilesort: {
+      whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
+    },
 
     browsers : ['PhantomJS'],
 
     plugins : [
       'karma-phantomjs-launcher',
+      'karma-angular-filesort',
       'karma-phantomjs-shim',
       'karma-coverage',
       'karma-jasmine',

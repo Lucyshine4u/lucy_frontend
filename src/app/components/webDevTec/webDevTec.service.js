@@ -1,8 +1,13 @@
-export class WebDevTecService {
-  constructor () {
-    'ngInject';
+(function() {
+  'use strict';
 
-    this.data = [
+  angular
+      .module('lucyFrontend')
+      .service('webDevTec', webDevTec);
+
+  /** @ngInject */
+  function webDevTec() {
+    var data = [
       {
         'title': 'AngularJS',
         'url': 'https://angularjs.org/',
@@ -50,17 +55,14 @@ export class WebDevTecService {
         'url': 'http://angular-ui.github.io/bootstrap/',
         'description': 'Bootstrap components written in pure AngularJS by the AngularUI Team.',
         'logo': 'ui-bootstrap.png'
-      },
-      {
-        'title': 'ES6 (Babel formerly 6to5)',
-        'url': 'https://babeljs.io/',
-        'description': 'Turns ES6+ code into vanilla ES5, so you can use next generation features today.',
-        'logo': 'babel.png'
       }
     ];
+
+    this.getTec = getTec;
+
+    function getTec() {
+      return data;
+    }
   }
 
-  getTec() {
-    return this.data;
-  }
-}
+})();
