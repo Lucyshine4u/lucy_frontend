@@ -3,10 +3,10 @@
 
   angular
     .module('lucyFrontend')
-    .factory('authService', authService);
+    .factory('auth', auth);
 
   /** @ngInject */
-  function authService() {
+  function auth() {
     var service = {
       login: function (username, password) {
         return username === 'xinxin' && password === 'xinxin';
