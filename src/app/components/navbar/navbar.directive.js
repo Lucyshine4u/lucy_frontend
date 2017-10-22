@@ -1,5 +1,5 @@
 (function() {
-  'use strict';
+    'use strict';
 
   angular
     .module('lucyFrontend')
@@ -11,7 +11,7 @@
       restrict: 'E',
       templateUrl: 'app/components/navbar/navbar.html',
       scope: {
-          creationDate: '='
+        creationDate: '='
       },
       controller: NavbarController,
       controllerAs: 'vm',
