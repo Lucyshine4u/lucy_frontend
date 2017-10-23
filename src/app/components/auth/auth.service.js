@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -6,10 +6,13 @@
     .factory('auth', auth);
 
   /** @ngInject */
-  function auth() {
+  function auth($http) {
     var service = {
-      login: function (username, password) {
-        return username === 'xinxin' && password === 'xinxin';
+      login: function(username, password) {
+        return $http.post('/api/login', {
+          userName: username,
+          password: password,
+        });
       }
     };
 

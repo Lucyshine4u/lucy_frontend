@@ -20,7 +20,7 @@
         url: '/login',
         templateUrl: 'app/login/login.html',
         controller: 'LoginController',
-        controllerAs: 'main'
+        controllerAs: 'login'
       });
 
     $urlRouterProvider.otherwise('/');
