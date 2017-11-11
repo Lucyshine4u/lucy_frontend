@@ -23,6 +23,14 @@
         controllerAs: 'login'
       });
 
+    $stateProvider
+      .state('ticket', {
+        url: '/ticket',
+        templateUrl: 'app/ticket/ticket.html',
+        controller: 'TicketController',
+        controllerAs: 'ticket'
+      });
+
     $urlRouterProvider.otherwise('/');
   }
 

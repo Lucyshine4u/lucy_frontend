@@ -1,0 +1,56 @@
+<div class="container ticket-main">
+
+  <div>
+    <acme-navbar creation-date="login.creationDate"></acme-navbar>
+  </div>
+
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+
+    <div class="ticket-title">优惠计算</div>
+
+    <div class="ticket-product">
+      <div class="product-title">商品</div>
+      <div class="product-category">
+        <span class="col-sm-4">商品名称</span>
+        <span class="col-sm-2">单价(元)</span>
+        <span class="col-sm-1">数量</span>
+        <span class="col-sm-2">总价</span>
+        <span class="col-sm-1">统计</span>
+        <span class="col-sm-2">操作</span>
+      </div>
+      <div class="product-list" ng-repeat="product in products">
+        <div>
+          <div class="col-sm-4"><input type="text" class="col-sm-4 form-control" placeholder="商品名称"
+                                       aria-label="product name"
+                                       aria-describedby="sizing-addon2" value="{{product.name}}"></div>
+          <div class="col-sm-2"><input type="number" class="col-sm-2 form-control" placeholder="元"
+                                       aria-label="product name"
+                                       aria-describedby="sizing-addon2" value="{{product.price}}"></div>
+          <div class="col-sm-1"><input type="number" class="col-sm-1 form-control" placeholder="数量"
+                                       aria-label="product name"
+                                       aria-describedby="sizing-addon2" value="{{product.number}}"></div>
+          <div class="col-sm-2"><input type="number" class="col-sm-2 form-control" placeholder="元"
+                                       aria-label="product name"
+                                       aria-describedby="sizing-addon2"></div>
+          <div class="col-sm-1 product-checkbox">
+            <label class="custom-control custom-checkbox" ng-click="clickCheckBox()">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+            </label>
+          </div>
+          <div class="col-sm-2"><input type="text" class="col-sm-2 form-control" placeholder="操作"
+                                       aria-label="product name"
+                                       aria-describedby="sizing-addon2"></div>
+        </div>
+      </div>
+      <div class="product-detail"></div>
+    </div>
+
+    <div class="ticket-tickets"></div>
+
+    <div class="ticket-bottom"></div>
+
+  </div>
+  <div class="col-sm-1"></div>
+</div>
