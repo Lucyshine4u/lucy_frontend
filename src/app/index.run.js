@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -6,9 +6,17 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
-
-    $log.debug('runBlock end');
+  function runBlock($state, $rootScope, auth) {
+    const listeners = {};
+    listeners.stateChangeStart = $rootScope.$on('$stateChangeStart', (event, toState) => {
+      if ('login' !== toState.name) {
+        // check user auth in resource page
+        if (!auth.isLogin()) {
+          event.preventDefault();
+          $state.go('login', {}, {reload: true});
+        }
+      }
+    });
   }
 
 })();

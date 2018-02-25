@@ -13,5 +13,8 @@
     "angular": true,
     "module": true,
     "inject": true
+  },
+  "rules": {
+    "comma-dangle": 0
   }
 }
